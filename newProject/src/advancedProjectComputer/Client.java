@@ -15,8 +15,4 @@ public class Client extends Person {
      int nationalID;
      char gender;
      String mobile;
-     
-     
-     
-    
 }
