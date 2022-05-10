@@ -4,9 +4,10 @@ package advancedProjectComputer;
 //import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class admin {
+public class Admin {
 	private Account account = new Account();
 	Scanner adminInput = new Scanner(System.in);
 	boolean adminLoginFlag = false;
@@ -29,8 +30,9 @@ public class admin {
 		else System.out.println("you are not signed in");
 	}
 	public Category addCategory() {
-		Category categ1 = new Category();
+		
 		if(adminLoginFlag == true) {
+			Category categ1 = new Category();
 			System.out.println("Adding new categoty...");
 			System.out.println("Enter category type:");
 			categ1.setType(adminInput.next());
@@ -43,13 +45,21 @@ public class admin {
 		}
 		
 	}
-	public void setCategory(Category cat1) {
+	public void editCategory(Category cat1) {
 		System.out.println("Current type of category is: "+ cat1.getType());
 		System.out.println("Enter new category type:");
-		cat1.setType(adminInput.next());
+		cat1.setType(adminInput.nextLine());
 		
 	}
-	public void deleteCategory(Category cat1) {
+	public void deleteCategory(Category cat1,ArrayList<Category> categories) {
+		for(int i=0;i<categories.size();i++) {
+		
+			if(categories.get(i).equals(cat1)) {
+				categories.remove(i);
+				break;
+			}
+		}
+		
 		cat1 = null;
 		System.out.println("Successfully deleted category.");
 	}
@@ -58,17 +68,17 @@ public class admin {
 		if(adminLoginFlag == true) {
 			System.out.println("Adding new event...");
 			System.out.println("Enter event title:");
-			event1.setTitle(adminInput.next());
+			event1.setTitle(adminInput.nextLine());
 			System.out.println("Enter event location:");
-			event1.setLocation(adminInput.next());
-			System.out.println("Enter event date dd/MM/yyyy :");
-			//DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-			event1.setDate(LocalDate.parse(adminInput.next()));
+			event1.setLocation(adminInput.nextLine());
+			System.out.println("Enter event date YYYY-MM-DD :");
+			
+			event1.setDate(LocalDate.parse(adminInput.nextLine()));
 			System.out.println("Enter event start time:");
-			event1.setStartTime(LocalTime.parse(adminInput.next()));
+			event1.setStartTime(LocalTime.parse(adminInput.nextLine()));
 			System.out.println("Enter event end time:");
-			event1.setEndTime(LocalTime.parse(adminInput.next()));
-			System.out.println("Added a new event.");
+			event1.setEndTime(LocalTime.parse(adminInput.nextLine()));
+			System.out.println(" you have succesfully Added a new event.");
 			return event1;
 		}
 		else {
@@ -76,22 +86,50 @@ public class admin {
 			return null;
 		}
 	}
-	public void setEvent(Event event1) {
-		System.out.println("Adding new event...");
+	public void editEvent(Event event1) {
+		System.out.println("Editing event " + event1.getTitle() + " of category " + event1.getCategory().getType());
 		System.out.println("Enter event title:");
-		event1.setTitle(adminInput.next());
+		event1.setTitle(adminInput.nextLine());
 		System.out.println("Enter event location:");
-		event1.setLocation(adminInput.next());
-		System.out.println("Enter event date dd/MM/yyyy :");
-		event1.setDate(LocalDate.parse(adminInput.next()));
+		event1.setLocation(adminInput.nextLine());
+		System.out.println("Enter event date YYYY-MM-DD :");
+		event1.setDate(LocalDate.parse(adminInput.nextLine()));
 		System.out.println("Enter event start time:");
-		event1.setStartTime(LocalTime.parse(adminInput.next()));
+		event1.setStartTime(LocalTime.parse(adminInput.nextLine()));
 		System.out.println("Enter event end time:");
-		event1.setEndTime(LocalTime.parse(adminInput.next()));
+		event1.setEndTime(LocalTime.parse(adminInput.nextLine()));
 		System.out.println("Successfuly modified event.");
 	}
-	public void deleteEvent(Event event1) {
+	public void deleteEvent(Event event1,ArrayList<Event>events) {
+		
+		for(int i=0;i<events.size();i++) {
+			
+			if(events.get(i).equals(event1)) {
+				events.remove(i);
+				break;
+			}
+		}
+		
+		
+		
 		event1 = null;
 		System.out.println("Successfuly deleted event.");
+	}
+	
+	public static void main(String[] args) {
+		
+		Category category =new Category();
+		
+		Event event=new Event();
+		
+		System.out.println("add new category");
+		
+		Admin admin=new Admin() ;
+		
+		admin.editCategory(category);
+		System.out.println("add event");
+		event.setCategory(category);
+		 admin.editEvent(event);
+		
 	}
 }

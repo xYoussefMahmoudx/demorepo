@@ -2,6 +2,7 @@ package advancedProjectComputer;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+//import java.util.Set;
 
 
 
@@ -14,6 +15,9 @@ public class Event {
 	
 	private LocalTime startTime;
 	private LocalTime endTime ;
+	
+	private Category category;
+	
 
 	public String getTitle() {
 		return title;
@@ -53,6 +57,14 @@ public class Event {
 
 	public void setEndTime(LocalTime endTime) {
 		this.endTime = endTime;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 }
 	/* public static void main(String[] args) {  
