@@ -139,7 +139,7 @@ public class Admin {
 		}
 	}
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		
 		Category category =new Category();
 		
@@ -154,5 +154,5 @@ public class Admin {
 		event.setCategory(category);
 		 admin.editEvent(event);
 		
-	}
+	}*/
 }
