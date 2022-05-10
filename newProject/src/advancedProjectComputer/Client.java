@@ -9,6 +9,7 @@ public class Client extends Person {
 	protected String nationalID;
 	protected char gender ;
 	protected String mobile;
+	private History history;
 	
 	public Client() {
 		
@@ -47,4 +48,9 @@ public class Client extends Person {
 		return mobile;
 	}
 
+	public History getHistory() {
+		return history;
+	}
+
+	
 }

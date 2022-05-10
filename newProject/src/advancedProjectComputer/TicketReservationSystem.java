@@ -3,7 +3,7 @@ package advancedProjectComputer;
 import java.util.ArrayList;
 import java.util.Scanner; 
 
-public class main {
+public class TicketReservationSystem {
 
 	public static void main(String[] args) {
 		Scanner  input = new Scanner(System.in);

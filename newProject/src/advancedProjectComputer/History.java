@@ -56,6 +56,11 @@ public class History {
 		}
 		
 	}
+		 public void setUpcomingEvent(Event event)
+		 {
+			 upcomingEvent.add(event);
+		 }
+	
 	
 	
 }

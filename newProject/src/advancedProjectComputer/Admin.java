@@ -13,7 +13,13 @@ public class Admin {
 	boolean adminLoginFlag = false;
 	
 	public Account getAccount() {
-		return account;
+		if(adminLoginFlag==true) {
+			return account;
+		}
+		else {
+			System.out.println(" you are not signed in ");
+			return null;
+		}
 	}
 	public void signInAccount(String userName ,String password) {
 		if(account.getUserName() == userName && account.getPassword() == password) {
@@ -52,6 +58,8 @@ public class Admin {
 		
 	}
 	public void deleteCategory(Category cat1,ArrayList<Category> categories) {
+		
+	if(adminLoginFlag==true)	{
 		for(int i=0;i<categories.size();i++) {
 		
 			if(categories.get(i).equals(cat1)) {
@@ -62,6 +70,10 @@ public class Admin {
 		
 		cat1 = null;
 		System.out.println("Successfully deleted category.");
+	}
+	else {
+		System.out.println("you are not signed in");
+	  }
 	}
 	public Event addEvent() {
 		Event event1 = new Event();
@@ -87,6 +99,8 @@ public class Admin {
 		}
 	}
 	public void editEvent(Event event1) {
+		
+	if(adminLoginFlag==true) {	
 		System.out.println("Editing event " + event1.getTitle() + " of category " + event1.getCategory().getType());
 		System.out.println("Enter event title:");
 		event1.setTitle(adminInput.nextLine());
@@ -99,9 +113,14 @@ public class Admin {
 		System.out.println("Enter event end time:");
 		event1.setEndTime(LocalTime.parse(adminInput.nextLine()));
 		System.out.println("Successfuly modified event.");
+	  }
+	else {
+		System.out.println("you are not signed in");
+	 }
 	}
 	public void deleteEvent(Event event1,ArrayList<Event>events) {
 		
+		if(adminLoginFlag==true) {	
 		for(int i=0;i<events.size();i++) {
 			
 			if(events.get(i).equals(event1)) {
@@ -114,6 +133,10 @@ public class Admin {
 		
 		event1 = null;
 		System.out.println("Successfuly deleted event.");
+		}
+		else {
+			System.out.println("you are not signed in");
+		}
 	}
 	
 	public static void main(String[] args) {
