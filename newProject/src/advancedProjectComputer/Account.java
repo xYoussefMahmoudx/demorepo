@@ -1,29 +1,25 @@
 package advancedProjectComputer;
 
-public class  Account {
+public class Account {
+	
+	private String userName;
+	private String password;
 
- private String username;
- private String password;
- 
- //public Account(String username, String password) {
-	//this.username=username;
-	//this.password=password;
-//}
-
-
- void setuserName(String username) {
-		this.username=username;
+	public String getUserName() {
+		return userName;
 	}
-	void setPassword(String  password) {
-		//this.password=password;
-		
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
-public	String getuserName() {
-	return username;
-}
+
 	public String getPassword() {
 		return password;
 	}
 
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	
+
 }

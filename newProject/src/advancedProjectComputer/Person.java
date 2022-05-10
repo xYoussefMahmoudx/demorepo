@@ -1,18 +1,21 @@
 package advancedProjectComputer;
 
-abstract public class Person {
+public abstract class Person {
 	protected String name ;
+	
+	
 	public Person() {
 		
 	}
-	  Person (String name)
 	
+	public void setName (String name) 
 	{
-		 this .name=name;
-		
+		this.name= name;
 	}
-	   String  getName()
-	  {
-		  return name;
-	  }
+	
+	public String getName () 
+	{
+		return name ;
+	}
+
 }
