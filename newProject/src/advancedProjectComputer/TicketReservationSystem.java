@@ -1,13 +1,10 @@
 package advancedProjectComputer;
 
-import java.awt.desktop.AboutHandler;import java.io.ObjectInputStream.GetField;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import javax.sound.midi.Soundbank;
-import javax.swing.text.DefaultEditorKit.InsertBreakAction; 
 
 public class TicketReservationSystem {
 	
@@ -55,7 +52,7 @@ public class TicketReservationSystem {
 		
 		categ1.setType("Category1");
 		categories.add(categ1);
-	//	categories.add(dummyAdmin1.alreadyAddedCategory());
+	
 		
 		
 		ArrayList<Event> events = new ArrayList<Event>();
@@ -78,7 +75,6 @@ public class TicketReservationSystem {
 		
 		events.add(event1);
 
-		//events.add(dummyAdmin1.alreadyAddEvent());
 		
 		
 		System.out.println("welcome to Yalla Tazaker please insert A for (Admin) and E for (Employee) ");
@@ -105,7 +101,7 @@ public class TicketReservationSystem {
 	    	  
 	    	  accountExist = true;
 	    	  currentAdmin= admines.get(i);
-	    	  //ASystem.out.println("Please Enter your password\n");
+	    	 
 	    	
 	    	  currentAdmin.signInAccount(userName,password);
 	      }

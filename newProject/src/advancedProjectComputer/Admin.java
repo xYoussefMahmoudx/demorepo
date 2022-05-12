@@ -1,11 +1,12 @@
 package advancedProjectComputer;
 
-//import java.text.DateFormat;
-//import java.text.SimpleDateFormat;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import javax.print.DocFlavor.INPUT_STREAM;
 
 public class Admin extends Person {
 	private Account account = new Account();
@@ -79,10 +80,12 @@ public class Admin extends Person {
 		System.out.println("you are not signed in");
 	  }
 	}
-	public Event addEvent() {
+	public Event addEvent(Category category) {
 		Event event1 = new Event();
 		if(adminLoginFlag == true) {
 			System.out.println("Adding new event...");
+			System.out.println("Enter event title:");
+			event1.setCategory(category);
 			System.out.println("Enter event title:");
 			event1.setTitle(adminInput.nextLine());
 			System.out.println("Enter event location:");
@@ -94,6 +97,8 @@ public class Admin extends Person {
 			event1.setStartTime(LocalTime.parse(adminInput.nextLine()));
 			System.out.println("Enter event end time:");
 			event1.setEndTime(LocalTime.parse(adminInput.nextLine()));
+			System.out.println("Enter event's description");
+			event1.setDescription(adminInput.nextLine());;
 			System.out.println(" you have succesfully Added a new event.");
 			return event1;
 		}
@@ -116,6 +121,8 @@ public class Admin extends Person {
 		event1.setStartTime(LocalTime.parse(adminInput.nextLine()));
 		System.out.println("Enter event end time:");
 		event1.setEndTime(LocalTime.parse(adminInput.nextLine()));
+		System.out.println("Enter event's description");
+		event1.setDescription(adminInput.nextLine());
 		System.out.println("Successfuly modified event.");
 	  }
 	else {

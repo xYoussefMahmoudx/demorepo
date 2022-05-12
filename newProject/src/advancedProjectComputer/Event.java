@@ -2,7 +2,6 @@ package advancedProjectComputer;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-//import java.util.Set;
 
 
 
@@ -10,9 +9,10 @@ public class Event {
 	
 	
 	private String title ;
+	private String description;
 	private String location ;
 	private LocalDate date ;
-	
+	private int availbleTickets =0;
 	private LocalTime startTime;
 	private LocalTime endTime ;
 	
@@ -65,6 +65,22 @@ public class Event {
 
 	public void setCategory(Category category) {
 		this.category = category;
+	}
+
+	public int getAvailbleTickets() {
+		return availbleTickets;
+	}
+
+	public void setAvailbleTickets(int availbleTickets) {
+		this.availbleTickets = availbleTickets;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }
 	

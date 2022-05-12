@@ -1,7 +1,7 @@
 package advancedProjectComputer;
 
 
-//import java.lang.invoke.WrongMethodTypeException;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -46,12 +46,13 @@ public class Employee extends Person  {
 		else{System.out.println("you are not signed in");}
 		
 	}
-	public Client addClient()
+	public void addClient(ArrayList<Client>clients)
 	{
 		
 		
 		if(loginFlag==true) {
 			Client c1=new Client();
+			
 			System.out.println("adding client to system");
 			System.out.println("insert client name ");
 			c1.setName(input.next());
@@ -64,12 +65,11 @@ public class Employee extends Person  {
 			System.out.println("insert client national ID");
 			c1.setNationalID(input.next());
 			System.out.println(" you have added client succesfuly");
-			return c1;
+			
 		}
 		else {
 			System.out.println(" you are not signed in");
-			return null;
-			
+		
 		
 		}
 		
@@ -193,35 +193,83 @@ public class Employee extends Person  {
 		}
 	}
 	
-	public Event searchEventByTitle(String title,ArrayList<Event>events) {
+	public void searchEventByTitle(String title,ArrayList<Event>events) {
 		
 		if(loginFlag==true) {	
 			for(int i=0;i<events.size();i++) {
 				
-				if(events.get(i).getTitle().equals(title)) {
+				if(events.get(i).getTitle().contains(title)) {
 					System.out.println(" found event " + events.get(i).getTitle());
-					return events.get(i);
 					
 				}
 			}
-			System.out.println("event not found");
-			return null;
+			
 			
 			}
 			else {
 				System.out.println("you are not signed in");
-				return null;
+				
 			}
 	}
 
-	public void viewEventDetails(Event event) {
-		System.out.println("event title " + event.getTitle() );
-		System.out.println("event location " + event.getLocation() );
-		System.out.println("event Start time " + event.getStartTime() );
-		System.out.println("event end time  " + event.getEndTime() );
-		System.out.println("event date " + event.getDate() );
-		System.out.println("event category " + event.getCategory().getType() );
+	public void viewEventDetails(String title,ArrayList<Event>events) {
+		if(loginFlag==true) {
+			int index=-1;
+			for(int i=0;i<events.size();i++) {
+				
+				if(events.get(i).getTitle().equals(title)) {
+					
+					index=i;
+					break;
+				}
+			}
+			if(index==-1) {
+				System.out.println("event not found");
+			}
+			
+			
+			else {
+			
+		System.out.println("event title " + events.get(index).getTitle() );
+		System.out.println("event category " + events.get(index).getCategory().getType() );
+		System.out.println("event location " + events.get(index).getLocation() );
+		System.out.println("event Start time " + events.get(index).getStartTime() );
+		System.out.println("event end time  " + events.get(index).getEndTime() );
+		System.out.println("event date " + events.get(index).getDate() );
+			}
+			
+		}
+		else {
+			System.out.println("you are not signed in");
+			
+		}
 		
+	}
+	
+	public void getEventsOfSameCategoty(String catType,ArrayList<Event>events) {
+		if(loginFlag==true) {
+		Boolean check =false;
+		System.out.println("please insert event's category Type");
+		System.out.println("here are All the event of category" + catType);
+		for(int i=0;i<events.size();i++) {
+			
+			if(events.get(i).getCategory().getType().equals(catType)) {
+				System.out.println( events.get(i).getTitle());
+				check=true;
+			}
+		}
+		if (check==false) {
+			System.out.println("no events found of this category");
+			
+		}
+		
+		
+		
+		}
+		else {
+			
+		}
+	
 	}
 }
 
