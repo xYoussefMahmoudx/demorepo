@@ -213,7 +213,7 @@ public class TicketReservationSystem {
 		System.out.println("Do you Already have an Account (Y/N) : ");
 		
 		char checkChar2=input.next().charAt(0);
-		if(checkChar=='Y') {
+		if(checkChar2=='Y') {
 			
 
 			System.out.println("please insert your username : " );
@@ -497,7 +497,11 @@ public class TicketReservationSystem {
 				System.out.println("Invalid input");
 				
 			}
-			
+		}
+			else {
+				System.out.println("Wrong Choice ");
+				
+			}
 		
 		
 	}
@@ -519,4 +523,4 @@ public class TicketReservationSystem {
 	}
 
 }
-}
+

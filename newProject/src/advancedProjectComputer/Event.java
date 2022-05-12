@@ -67,22 +67,4 @@ public class Event {
 		this.category = category;
 	}
 }
-	/* public static void main(String[] args) {  
-		 Event event=new Event();
-		 
-		 event.setStartTime(LocalTime.of(10,43,12));
-		 System.out.println(event.getStartTime());
-		 event.setEndTime(LocalTime.of(10,20,12));
-		 System.out.println(event.getEndTime());
-		 
-		 int v=event.getStartTime().compareTo(event.getEndTime());
-		 System.out.println(v);
-		 LocalTime time = LocalTime.now();
-		 System.out.println(time);
-		 int x=event.getStartTime().compareTo(time);
-		 System.out.println(x);
-		 LocalDate date =LocalDate.of(2022, 5, 9);
-		 System.out.println(date);
-	 }
-
-}*/
+	

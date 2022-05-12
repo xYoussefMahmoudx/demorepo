@@ -142,49 +142,6 @@ public class Admin extends Person {
 			System.out.println("you are not signed in");
 		}
 	}
-/*public Category alreadyAddedCategory() {
-		
-		
-			Category categ1 = new Category();
-	
-			categ1.setType("Category1");
-			
-			return categ1;
-	
-		}
 
-public Event alreadyAddEvent() {
-	Event event1 = new Event();
-	
-		
-		event1.setTitle("event");
-		
-		event1.setLocation("city");
-		
-		
-		event1.setDate(LocalDate.of(2022, 5, 9));
-		
-		event1.setStartTime(LocalTime.of(10,30 ));
-		
-		event1.setEndTime(LocalTime.of(11,30 ));
-		
-		return event1;
-	}
-	public static void main(String[] args) {
-		
-		Category category =new Category();
-		
-		Event event=new Event();
-		
-		System.out.println("add new category");
-		
-		Admin admin=new Admin() ;
-		
-		admin.editCategory(category);
-		System.out.println("add event");
-		event.setCategory(category);
-		 admin.editEvent(event);
-		
-	}*/
 	
 }
