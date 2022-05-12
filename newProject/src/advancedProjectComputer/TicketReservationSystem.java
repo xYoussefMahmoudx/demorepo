@@ -56,7 +56,7 @@ public class TicketReservationSystem {
 
 		Category categ2 = new Category();
 		
-		categ1.setType("match");
+		categ2.setType("match");
 		categories.add(categ2);
 		
 

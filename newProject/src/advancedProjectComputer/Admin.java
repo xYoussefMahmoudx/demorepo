@@ -84,7 +84,7 @@ public class Admin extends Person {
 		Event event1 = new Event();
 		if(adminLoginFlag == true) {
 			System.out.println("Adding new event...");
-			System.out.println("Enter event title:");
+			
 			event1.setCategory(category);
 			System.out.println("Enter event title:");
 			event1.setTitle(adminInput.nextLine());
