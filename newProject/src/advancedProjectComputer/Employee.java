@@ -53,7 +53,7 @@ public class Employee extends Person  {
 		if(loginFlag==true) {
 			Client c1=new Client();
 			System.out.println("adding client to system");
-			System.out.println("insert client serial number");
+			System.out.println("insert client name ");
 			c1.setName(input.next());
 			System.out.println("insert client serial number");
 			c1.setSerialNumber(input.nextInt());
@@ -87,7 +87,7 @@ public class Employee extends Person  {
 			}
 			
 			c1 = null;
-			System.out.println("Successfully deleted category.");
+			System.out.println("Successfully deleted client.");
 		}
 		else {
 			System.out.println(" you are not signed in");

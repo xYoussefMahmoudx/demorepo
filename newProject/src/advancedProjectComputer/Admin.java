@@ -142,7 +142,7 @@ public class Admin extends Person {
 			System.out.println("you are not signed in");
 		}
 	}
-public Category alreadyAddedCategory() {
+/*public Category alreadyAddedCategory() {
 		
 		
 			Category categ1 = new Category();
@@ -170,7 +170,7 @@ public Event alreadyAddEvent() {
 		
 		return event1;
 	}
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
 		
 		Category category =new Category();
 		
