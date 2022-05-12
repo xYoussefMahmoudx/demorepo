@@ -12,13 +12,9 @@ public class Employee extends Person  {
 	boolean loginFlag = false;
 	
 	public Account getAccount() {
-		if(loginFlag==true) {
+		
 			return account;
-		}
-		else {
-			System.out.println(" you are not signed in ");
-			return null;
-		}
+		
 	}
 
 	public void registerAccount(String userName,String password) {
@@ -31,7 +27,7 @@ public class Employee extends Person  {
 
 	public void signInAccount(String userName,String password) {
 
-		if(account.getUserName()==userName && account.getPassword()==password)
+		if(account.getUserName().equals(userName) && account.getPassword().equals(password))
 		{
 			System.out.println("You've logged in successfully !!");
 			loginFlag=true;

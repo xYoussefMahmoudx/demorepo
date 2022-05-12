@@ -7,22 +7,26 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Admin {
+public class Admin extends Person {
 	private Account account = new Account();
 	Scanner adminInput = new Scanner(System.in);
 	boolean adminLoginFlag = false;
 	
+	
+	public void registerAccount(String userName,String password) {
+
+		account.setUserName(userName);
+		account.setPassword(password);
+		
+		System.out.println("You've registerd successfully !!");
+	}
 	public Account getAccount() {
-		if(adminLoginFlag==true) {
+		
 			return account;
-		}
-		else {
-			System.out.println(" you are not signed in ");
-			return null;
-		}
+		
 	}
 	public void signInAccount(String userName ,String password) {
-		if(account.getUserName() == userName && account.getPassword() == password) {
+		if(account.getUserName().equals(userName) && account.getPassword().equals(password)) {
 			System.out.println("You've logged in successfully !!");
 			adminLoginFlag = true;
 		}
@@ -42,7 +46,7 @@ public class Admin {
 			System.out.println("Adding new categoty...");
 			System.out.println("Enter category type:");
 			categ1.setType(adminInput.next());
-			System.out.println("Added a new category.");
+			System.out.println("Added succesfully!");
 			return categ1;
 		}
 		else {
@@ -55,7 +59,7 @@ public class Admin {
 		System.out.println("Current type of category is: "+ cat1.getType());
 		System.out.println("Enter new category type:");
 		cat1.setType(adminInput.nextLine());
-		
+		System.out.println("Succefully edited!");
 	}
 	public void deleteCategory(Category cat1,ArrayList<Category> categories) {
 		
@@ -101,7 +105,7 @@ public class Admin {
 	public void editEvent(Event event1) {
 		
 	if(adminLoginFlag==true) {	
-		System.out.println("Editing event " + event1.getTitle() + " of category " + event1.getCategory().getType());
+		System.out.println("Editing event " + event1.getTitle());
 		System.out.println("Enter event title:");
 		event1.setTitle(adminInput.nextLine());
 		System.out.println("Enter event location:");
@@ -138,7 +142,34 @@ public class Admin {
 			System.out.println("you are not signed in");
 		}
 	}
+public Category alreadyAddedCategory() {
+		
+		
+			Category categ1 = new Category();
 	
+			categ1.setType("Category1");
+			
+			return categ1;
+	
+		}
+
+public Event alreadyAddEvent() {
+	Event event1 = new Event();
+	
+		
+		event1.setTitle("event");
+		
+		event1.setLocation("city");
+		
+		
+		event1.setDate(LocalDate.of(2022, 5, 9));
+		
+		event1.setStartTime(LocalTime.of(10,30 ));
+		
+		event1.setEndTime(LocalTime.of(11,30 ));
+		
+		return event1;
+	}
 	/*public static void main(String[] args) {
 		
 		Category category =new Category();
@@ -155,4 +186,5 @@ public class Admin {
 		 admin.editEvent(event);
 		
 	}*/
+	
 }
