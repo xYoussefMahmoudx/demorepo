@@ -72,7 +72,14 @@ public class Event {
 	}
 
 	public void setAvailbleTickets(int availbleTickets) {
-		this.availbleTickets = availbleTickets;
+		this.availbleTickets=availbleTickets;
+		
+	}
+	public void bookedTickets() {
+		availbleTickets++;
+	}
+	public void unbookedTickets() {
+		availbleTickets++;
 	}
 
 	public String getDescription() {

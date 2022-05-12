@@ -56,14 +56,15 @@ public class Employee extends Person  {
 			System.out.println("adding client to system");
 			System.out.println("insert client name ");
 			c1.setName(input.next());
-			System.out.println("insert client serial number");
-			c1.setSerialNumber(input.nextInt());
+			
+			c1.setSerialNumber();
 			System.out.println("insert client mobile number");
 			c1.setMobile(input.next());
 			System.out.println("insert client gender");
 			c1.setGender(input.next().charAt(0));
 			System.out.println("insert client national ID");
 			c1.setNationalID(input.next());
+			clients.add(c1);
 			System.out.println(" you have added client succesfuly");
 			
 		}
@@ -81,6 +82,11 @@ public class Employee extends Person  {
 			for(int i=0;i<clients.size();i++) {
 				
 				if(clients.get(i).equals(c1)) {
+					
+					for( int j=0;i<clients.get(i).getHistory().getUpcomingEvents().size();j++) {
+						
+						clients.get(i).getHistory().getUpcomingEvents().get(j).unbookedTickets();
+					}
 					clients.remove(i);
 					break;
 				}
@@ -135,6 +141,7 @@ public class Employee extends Person  {
 		}
 		
 		if(loginFlag==true && index>=0) {
+			
 			System.out.println("client name is "+ clients.get(index).getName());
 			System.out.println("client seial number is "+ clients.get(index).getSerialNumber());
 			System.out.println("client national ID is "+ clients.get(index).getNationalID());
@@ -159,8 +166,15 @@ public class Employee extends Person  {
 
 		if(loginFlag==true) {
 			
-			c1.getHistory().setUpcomingEvent(e1);;
+			if(e1.getAvailbleTickets()>0) {
+			c1.getHistory().setUpcomingEvent(e1);
+			e1.bookedTickets();
 			
+			}
+			else {
+				 System.out.println("not enough available Tickets");
+				
+			}
 		}
 		else {
 			System.out.println(" you are not signed in");
@@ -178,6 +192,7 @@ public class Employee extends Person  {
 
 					
 					c1.getHistory().getUpcomingEvents().remove(i);
+					e1.unbookedTickets();
 					System.out.println(" event has been unbooked");
 					break;
 				}
@@ -270,6 +285,28 @@ public class Employee extends Person  {
 			
 		}
 	
+	}
+	
+	public Event findEvent(String eventName,ArrayList<Event>events) {
+		
+		if(loginFlag==true) {	
+			for(int i=0;i<events.size();i++) {
+				
+				if(events.get(i).getTitle().equals(eventName)) {
+					
+					return events.get(i);
+				}
+			}
+			
+			
+			}
+			else {
+				System.out.println("you are not signed in");
+				return null;
+			}
+		
+		return null;
+		
 	}
 }
 

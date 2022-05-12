@@ -4,19 +4,21 @@ public class Client extends Person {
 	
 	
 	
-	
+	static int SerialCounter = 0 ;
 	protected int serialNumber ;
 	protected String nationalID;
 	protected char gender ;
 	protected String mobile;
 	private History history;
 	
+	
 	public Client() {
 		
 	}
 	
-	public void setSerialNumber(int serialNumber) {
-		this.serialNumber=serialNumber;
+	public void setSerialNumber() {
+		this.serialNumber=SerialCounter;
+		SerialCounter++;
 		
 	}
 	public void setNationalID(String nationalID) {

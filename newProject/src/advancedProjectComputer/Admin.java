@@ -6,7 +6,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import javax.print.DocFlavor.INPUT_STREAM;
+
 
 public class Admin extends Person {
 	private Account account = new Account();
@@ -98,7 +98,9 @@ public class Admin extends Person {
 			System.out.println("Enter event end time:");
 			event1.setEndTime(LocalTime.parse(adminInput.nextLine()));
 			System.out.println("Enter event's description");
-			event1.setDescription(adminInput.nextLine());;
+			event1.setDescription(adminInput.nextLine());
+			System.out.println("Enter event's number of tickets");
+			event1.setAvailbleTickets(adminInput.nextInt());
 			System.out.println(" you have succesfully Added a new event.");
 			return event1;
 		}
@@ -123,6 +125,8 @@ public class Admin extends Person {
 		event1.setEndTime(LocalTime.parse(adminInput.nextLine()));
 		System.out.println("Enter event's description");
 		event1.setDescription(adminInput.nextLine());
+		System.out.println("Enter event's number of tickets");
+		event1.setAvailbleTickets(adminInput.nextInt());
 		System.out.println("Successfuly modified event.");
 	  }
 	else {
