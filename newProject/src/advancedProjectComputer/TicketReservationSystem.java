@@ -192,7 +192,7 @@ public class TicketReservationSystem {
 		String catTypeString=input.next();
 		for (int i = 0; i < categories.size(); i++) {
 		
-			if(categories.get(i).getType() .equals(catTypeString)) {
+			if(events.get(i).getTitle() .equals(catTypeString)) {
 	    	  
 				events.add(currentAdmin.addEvent(categories.get(i)));
 	    	  break;  
@@ -205,10 +205,10 @@ public class TicketReservationSystem {
 		
 	case 2:{
 		System.out.println("Please insert the event  you wish to edit");
-		String catTypeString=input.next();
+		String catTypeString = input.next();
 		for (int i = 0; i < events.size(); i++) {
 		
-			if(events.get(i).getTitle() .equals(catTypeString)) {
+			if(events.get(i).getTitle().equals(catTypeString)) {
 	    	  
 	    	  currentAdmin.editEvent(events.get(i));
 	    	  break;  
@@ -223,7 +223,7 @@ public class TicketReservationSystem {
 		String catString=input.next();
 		for (int i = 0; i < events.size(); i++) {
 			
-		      if(events.get(i).getTitle() ==catString) {
+		      if(events.get(i).getTitle() .equals(catString)) {
 		    	  
 		    	  currentAdmin.deleteEvent(events.get(i), events);
 		    	  break;  
