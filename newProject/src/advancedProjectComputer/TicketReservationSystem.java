@@ -62,7 +62,7 @@ public class TicketReservationSystem {
 
 		
 		Event event1 = new Event();
-		event1.setTitle("spider man");
+		event1.setTitle("spiderman");
 		event1.setLocation("vox cinema");
 		event1.setDate(LocalDate.of(2022, 8, 9));
 		event1.setStartTime(LocalTime.of(10,30 ));
@@ -75,7 +75,7 @@ public class TicketReservationSystem {
 		
 		
        Event event2 = new Event();	
-       event2.setTitle("spider woman");
+       event2.setTitle("spiderwoman");
        event2.setLocation("vox cinema");
        event2.setDate(LocalDate.of(2022, 7, 9));
        event2.setStartTime(LocalTime.of(10,30 ));
@@ -189,10 +189,10 @@ public class TicketReservationSystem {
 	
 	case 1:{
 		System.out.println("Please insert the category  you wish to add event of it");
-		String catType = input.next();
+		String catTypeString=input.next();
 		for (int i = 0; i < categories.size(); i++) {
 		
-			if(categories.get(i).getType() .equals(catType)) {
+			if(categories.get(i).getType() .equals(catTypeString)) {
 	    	  
 				events.add(currentAdmin.addEvent(categories.get(i)));
 	    	  break;  
@@ -205,10 +205,10 @@ public class TicketReservationSystem {
 		
 	case 2:{
 		System.out.println("Please insert the event  you wish to edit");
-		String catType = input.nextLine();
+		String catTypeString=input.next();
 		for (int i = 0; i < events.size(); i++) {
 		
-			if(events.get(i).getTitle() .equals(catType)) {
+			if(events.get(i).getTitle() .equals(catTypeString)) {
 	    	  
 	    	  currentAdmin.editEvent(events.get(i));
 	    	  break;  
@@ -220,10 +220,10 @@ public class TicketReservationSystem {
    }
 	case 3:{
 		System.out.println("Please insert the event  you wish to delete");
-		String catType = input.nextLine();
+		String catString=input.next();
 		for (int i = 0; i < events.size(); i++) {
 			
-		      if(events.get(i).getTitle() .equals(catType)) {
+		      if(events.get(i).getTitle() ==catString) {
 		    	  
 		    	  currentAdmin.deleteEvent(events.get(i), events);
 		    	  break;  
