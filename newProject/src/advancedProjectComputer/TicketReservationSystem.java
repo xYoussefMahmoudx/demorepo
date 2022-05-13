@@ -205,7 +205,7 @@ public class TicketReservationSystem {
 		
 	case 2:{
 		System.out.println("Please insert the event  you wish to edit");
-		String catType = input.next();
+		String catType = input.nextLine();
 		for (int i = 0; i < events.size(); i++) {
 		
 			if(events.get(i).getTitle() .equals(catType)) {
@@ -220,7 +220,7 @@ public class TicketReservationSystem {
    }
 	case 3:{
 		System.out.println("Please insert the event  you wish to delete");
-		String catType = input.next();
+		String catType = input.nextLine();
 		for (int i = 0; i < events.size(); i++) {
 			
 		      if(events.get(i).getTitle() .equals(catType)) {
