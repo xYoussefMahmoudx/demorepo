@@ -12,7 +12,12 @@ public class History {
 	
 	
 	
-	
+	History(){
+		Event event=new Event();
+		
+		attendedEvent.add(event);
+		upcomingEvent.add(event);
+	}
 	public ArrayList<Event> getAttendedEvents() {
 		
 		LocalDate dateNow =LocalDate.now();
@@ -61,6 +66,10 @@ public class History {
 			 upcomingEvent.add(event);
 		 }
 	
-	
+	public void setAttendeEvent(Event event)
+	 {
+		 attendedEvent.add(event);
+	 }
+
 	
 }

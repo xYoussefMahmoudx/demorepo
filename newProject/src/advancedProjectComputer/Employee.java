@@ -5,6 +5,8 @@ package advancedProjectComputer;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.sound.midi.Soundbank;
+
 public class Employee extends Person  {
 	
 	private Account account=new Account();
@@ -164,8 +166,10 @@ public class Employee extends Person  {
 		if(loginFlag==true) {
 			
 			if(e1.getAvailbleTickets()>0) {
-			c1.getHistory().setUpcomingEvent(e1);
+				
+			
 			e1.bookedTickets();
+			System.out.println("you have booked a ticket for  the event");
 			
 			}
 			else {
@@ -182,21 +186,18 @@ public class Employee extends Person  {
 
          if(loginFlag==true) {
         	
-			for(int i=0;i<c1.getHistory().getUpcomingEvents().size();i++) {
-				
 			
-				if(c1.getHistory().getUpcomingEvents().get(i).equals(e1)) {
-
+			
 					
-					c1.getHistory().getUpcomingEvents().remove(i);
+					
 					e1.unbookedTickets();
 					System.out.println(" event has been unbooked");
-					break;
-				}
 			
 				
 			
-			}
+				
+			
+			
 			
          }
 		

@@ -12,6 +12,8 @@ public class Client extends Person {
 	private History history;
 	
 	
+	
+	
 	public Client() {
 		
 	}
@@ -51,6 +53,7 @@ public class Client extends Person {
 	}
 
 	public History getHistory() {
+		
 		return history;
 	}
 

@@ -18,6 +18,10 @@ public class Event {
 	
 	private Category category;
 	
+	
+	Event(){
+		
+	}
 
 	public String getTitle() {
 		return title;

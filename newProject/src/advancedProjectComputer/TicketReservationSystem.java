@@ -39,15 +39,7 @@ public class TicketReservationSystem {
 		
 		admines.add(dummyAdmin1);
 		
-		Client client =new Client();
-		client.setName("Ahmed");
-		client.setMobile("01011111111");
-		client.setGender('M');
-		client.setSerialNumber();
-		client.setNationalID("3020503030");
-		
-		clients.add(client);
-		
+
 
 		Category categ1 = new Category();
 		
@@ -96,6 +88,16 @@ public class TicketReservationSystem {
 	       event3 .setCategory(categ2);
 			events.add( event3);
 		
+			Client client =new Client();
+			client.setName("Ahmed");
+			client.setMobile("01011111111");
+			client.setGender('M');
+			client.setSerialNumber();
+			client.setNationalID("3020503030");
+			
+			clients.add(client);
+			
+			
 	}
 	
 	public Admin letAdminSignin() {
@@ -385,12 +387,15 @@ System.out.println("Do you Already have an Account (Y/N) : ");
 		
 		case 5: {
 			
-			System.out.println("plese insert title of event you want to book :");
 			
-			String eventTitle = input.nextLine();
-			System.out.println("please insert name of the client you want to book for him :");
-			String clientName = input.next();
-			currentEmployee.bookEvent(currentEmployee.getClientByName(clientName, clients), currentEmployee.findEvent(eventTitle, events));
+			
+			
+			
+			System.out.println("please insert name of the client you want to book for him then name of event :");
+			
+			
+			
+			currentEmployee.bookEvent(currentEmployee.getClientByName(input.next(), clients), currentEmployee.findEvent(input.next(), events));
 			
 			
 			break;
@@ -400,12 +405,11 @@ System.out.println("Do you Already have an Account (Y/N) : ");
 			
 			
 
-			System.out.println("plese insert title of event you want to unbook :");
 			
-			String eventTitle = input.nextLine();
-			System.out.println("please insert name of the client you want to unbook for him :");
-			String clientName = input.next();
-			currentEmployee.unbookEvent(currentEmployee.getClientByName(clientName, clients), currentEmployee.findEvent(eventTitle, events));
+			
+			System.out.println("please insert name of the client you want to unbook for him  and the event:");
+		
+			currentEmployee.unbookEvent(currentEmployee.getClientByName(input.next(), clients), currentEmployee.findEvent(input.next(), events));
 			
 			
 			break;
@@ -435,8 +439,8 @@ System.out.println("Do you Already have an Account (Y/N) : ");
 		case 1: {
 			
 			System.out.println("insert the name of the event ");
-			String eventName= input.nextLine();
-			currentEmployee.searchEventByTitle(eventName, events);
+			
+			currentEmployee.searchEventByTitle( input.next(), events);
 			
 			break;
 		}
@@ -444,8 +448,8 @@ System.out.println("Do you Already have an Account (Y/N) : ");
 		case 2: {
 			
 			System.out.println("insert the name of the event ");
-			String eventName= input.nextLine();
-			currentEmployee.viewEventDetails(eventName,events);	
+			
+			currentEmployee.viewEventDetails(input.next(),events);	
 			
 			break;
 			
