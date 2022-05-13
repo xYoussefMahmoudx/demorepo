@@ -83,12 +83,7 @@ public class Employee extends Person  {
 				
 				if(clients.get(i).equals(c1)) {
 					
-					for( int j=0;i<clients.get(i).getHistory().getUpcomingEvents().size();j++) {
-						if(clients.get(i).getHistory().getUpcomingEvents()==null) {
-							break;
-						}
-						clients.get(i).getHistory().getUpcomingEvents().get(j).unbookedTickets();
-					}
+					
 					clients.remove(i);
 					break;
 				}

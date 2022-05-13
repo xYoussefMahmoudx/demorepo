@@ -427,7 +427,7 @@ System.out.println("Do you Already have an Account (Y/N) : ");
 		System.out.println("Please insert the one of the following numbers" );
 		
 		System.out.println("1: search event by name ");
-		System.out.println("2: search event by name ");
+		System.out.println("2: view event details ");
 		
 		
 		
